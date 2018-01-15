@@ -1,3 +1,2 @@
-# 53js Formation JavaScript
-
-Support for the JavaScript for beginners course.
+# javascript-tp3-autosuggest
+Formation HB 2018 - Ajax
