@@ -27,10 +27,7 @@ function getSuggestion() {
 	xhr.setRequestHeader('Content-Type',
 		'application/x-www-form-urlencoded; charset=utf-8');
 	xhr.send("qValue=" + inputValue);
-	if (words.length === 0) {
-		suggestDiv.style.display = 'none';
-		return;
-	}
+
 }
 
 function handleDicoRequest() {

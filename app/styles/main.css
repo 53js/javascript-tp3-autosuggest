@@ -17,8 +17,12 @@ html, body {
 #suggestionDiv {
 	display: none;
 	position: absolute;
-	left:0;
-	top: 22px;
+	left: 40px;
+	top: 62px;
 	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
 	background: #fff;
+}
+
+#suggestionDiv > ul {
+	list-style: none;
 }
