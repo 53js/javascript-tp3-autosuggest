@@ -22,22 +22,28 @@ function getSuggestion() {
 	// 	return;
 	// }
 
-	xhr.onload = handleDicoRequest;
-	xhr.open('POST', url);
-	xhr.setRequestHeader('Content-Type',
-		'application/x-www-form-urlencoded; charset=utf-8');
-	xhr.send("qValue=" + inputValue);
+	// xhr.onload = handleDicoRequest;
+	// xhr.open('POST', url);
+	// xhr.setRequestHeader('Content-Type',
+	// 	'application/x-www-form-urlencoded; charset=utf-8');
+	// xhr.send("qValue=" + inputValue);
 
+	$.ajax({
+		url: url,
+		type: 'POST',
+		dataType: 'json',
+		data: {
+			qValue: inputValue
+		},
+		success: handleDicoRequest,
+		error: function() {
+			alert('HTTP error');
+		}
+	});
 }
 
-function handleDicoRequest() {
-	if(xhr.status !== 200) {
-		alert('HTTP error');
-		return;
-	}
-	let resp = xhr.response;
-	// array =>
-	let words = JSON.parse(resp);
+function handleDicoRequest(result) {
+	const words = result;
 	if (words.length === 0) {
 		hideSuggestDiv();
 	} else {
